@@ -191,7 +191,7 @@ calculateCorForTwoMatrices(source_gene,targetOmicsList[[i]],fdrThr)
     cat("Plot figure...\n")
     
     if(length(targetOmicsList)==1){
-      png(outputfile)
+      png(outputfile,height=480*5,width=480*5,res=300)
       .plotHeatMap(resultList,genelocate_sourceOmics,chromLength_sourceOmics,
       genelocate_targetOmics,chromLength_targetOmics,sourceOmicsName,
       targetOmicsName,dim=1)
@@ -200,7 +200,7 @@ calculateCorForTwoMatrices(source_gene,targetOmicsList[[i]],fdrThr)
         col=c("red","blue"),pch=19)
       }
     }else{
-      png(outputfile)
+      png(outputfile,height=480*8,width=480*5*length(targetOmicsList),res=300)
       layout(matrix(c(1:(2*length(targetOmicsList))),length(targetOmicsList),
       2,byrow=TRUE),heights=c(2,1))
       for(i in seq_len(length(resultList))){
@@ -218,7 +218,7 @@ calculateCorForTwoMatrices(source_gene,targetOmicsList[[i]],fdrThr)
       sourceOmicsName)
       if(legend==TRUE){
         legend("topleft",c("specific correlation","common correlation"),
-        col=c("blue","black"),lty=1,lwd=3)
+        col=c("grey","black"),lty=1,lwd=3)
       }
     }
     dev.off()
