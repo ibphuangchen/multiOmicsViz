@@ -98,12 +98,12 @@ nThreads=NULL,legend=TRUE){
       "13","14","15","16","17","18","19","20","21","22","X","Y" and "All".')
     }
 
-    if((length(chrome_sourceOmics)>1 && which(chrome_sourceOmics=="All")>1) 
+    if((length(chrome_sourceOmics)>1 && sum(chrome_sourceOmics=="All")>1) 
     || (length(chrome_sourceOmics)==1 && chrome_sourceOmics=="All")){
       chrome_sourceOmics <- "All"
     }
     
-    if((length(chrome_targetOmics)>1 && which(chrome_targetOmics=="All")>1) 
+    if((length(chrome_targetOmics)>1 && sum(chrome_targetOmics=="All")>1) 
     || (length(chrome_targetOmics)==1 && chrome_targetOmics=="All")){
       chrome_targetOmics <- "All"
     }
