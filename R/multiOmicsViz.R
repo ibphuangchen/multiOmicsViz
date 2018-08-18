@@ -221,7 +221,8 @@ calculateCorForTwoMatrices(source_gene,targetOmicsList[[i]],fdrThr)
         col=c("grey","black"),lty=1,lwd=3)
       }
     }
-    dev.off()
+    dev.off() 
+    return(resultList)
 }
 
 .calculateChromLength <- function(chromLength,selectedChrom,genelocate){
@@ -379,5 +380,4 @@ chromLength_sourceOmics[,2]/2),
         }
       }
     }
-    return(resultList)
 }
