@@ -379,4 +379,5 @@ chromLength_sourceOmics[,2]/2),
         }
       }
     }
+    return(resultList)
 }
