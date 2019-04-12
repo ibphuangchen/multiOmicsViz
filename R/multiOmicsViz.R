@@ -222,7 +222,7 @@ calculateCorForTwoMatrices(source_gene,targetOmicsList[[i]],fdrThr)
       }
     }
     dev.off() 
-    return(resultList)
+    return(resultList) #added by Chen
 }
 
 .calculateChromLength <- function(chromLength,selectedChrom,genelocate){
@@ -344,7 +344,8 @@ genelocate_sourceOmics,sourceOmicsName){
     sumA[sumA>1] <- 0
     maxP <- 0
     for(i in seq_len(length(resultList))){
-      y <- abs(resultList[[i]])*sumA
+      #y <- abs(resultList[[i]])*sumA  #Jing's original code
+      y = abs(resultList[[i]]) #Chen's code
       spe[[i]] <- apply(y,1,sum)
       maxP <- max(maxP,max(spe[[i]]))
     }
